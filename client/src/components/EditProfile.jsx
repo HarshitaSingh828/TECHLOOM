@@ -28,7 +28,7 @@ let EditProfile = () => {
 
       useEffect(() => {
         if (!localStorage.getItem("devroom")) {
-          navigate("http://localhost:5001/users/login");
+          navigate("https://tech-loom-zez7.onrender.com/users/login");
         }
         setLoggedIn(true);
       }, []);
@@ -58,7 +58,7 @@ let EditProfile = () => {
   };
 
      const getProfile = async (userPassed) => {
-       let { status, data } = await axios.get("http://localhost:5001/api/profiles/me", {
+       let { status, data } = await axios.get("https://tech-loom-zez7.onrender.com/api/profiles/me", {
          headers: {
            "Content-Type": "application/json",
            Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -96,7 +96,7 @@ let EditProfile = () => {
 
 
  const getUser = async () => {
-   let { data } = await axios.get("http://localhost:5001/api/users/me", {
+   let { data } = await axios.get("https://tech-loom-zez7.onrender.com/api/users/me", {
      headers: {
        "Content-Type": "application/json",
        Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -121,7 +121,7 @@ let EditProfile = () => {
   let submitUpdateProfile = async(event) => {
     event.preventDefault();
 
- await axios.put("http://localhost:5001/api/profiles/", localProfile, {
+ await axios.put("https://tech-loom-zez7.onrender.com/api/profiles/", localProfile, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,

@@ -17,7 +17,7 @@ let PostDetails = () => {
   let navigate = useNavigate();
  useEffect(() => {
    if (!localStorage.getItem("devroom")) {
-     navigate("http://localhost:5001/users/login");
+     navigate("https://tech-loom-zez7.onrender.com/users/login");
    }
    setLoggedIn(true);
  }, []);
@@ -48,7 +48,7 @@ let PostDetails = () => {
   }
 
     const getUser = async () => {
-     let { data } = await axios.get("http://localhost:5001/api/users/me", {
+     let { data } = await axios.get("https://tech-loom-zez7.onrender.com/api/users/me", {
        headers: {
          "Content-Type": "application/json",
          Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -59,7 +59,7 @@ let PostDetails = () => {
    };
 
   let getPost = async() =>{
-    let { data } = await axios.get(`http://localhost:5001/api/posts/${postId}`, {
+    let { data } = await axios.get(`https://tech-loom-zez7.onrender.com/api/posts/${postId}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -79,7 +79,7 @@ let PostDetails = () => {
 
   let submitCreateComment = async(e) => {
     e.preventDefault();
-    await axios.post(`http://localhost:5001/api/posts/comment/${postId}`, comment, {
+    await axios.post(`https://tech-loom-zez7.onrender.com/api/posts/comment/${postId}`, comment, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -95,7 +95,7 @@ let PostDetails = () => {
 
   let clickDeleteComment = async(commentId) => {
     // dispatch(postActions.deleteComment(postId, commentId));
-    await axios.delete(`http://localhost:5001/api/posts/comment/${postId}/${commentId}`, {
+    await axios.delete(`https://tech-loom-zez7.onrender.com/api/posts/comment/${postId}/${commentId}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,

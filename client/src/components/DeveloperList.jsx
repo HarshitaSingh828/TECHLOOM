@@ -8,7 +8,7 @@ let DeveloperList = () => {
   const [profiles,setProfiles]=useState([]);
   const [loading,setLoading] = useState(true);
   const fetchProfiles = async() =>{
-    const { data } = await axios.get("http://localhost:5001/api/profiles/all",{
+    const { data } = await axios.get("https://tech-loom-zez7.onrender.com/api/profiles/all",{
       headers: {
         "Content-Type": "application/json",
       },

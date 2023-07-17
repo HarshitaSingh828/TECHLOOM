@@ -17,7 +17,7 @@ let navigate = useNavigate();
   });
     useEffect(() => {
       if (!localStorage.getItem("devroom")) {
-        navigate("http://localhost:5001/users/login");
+        navigate("/users/login");
       }
     }, []);
 
@@ -37,7 +37,7 @@ let navigate = useNavigate();
 
   let submitAddExperience = async(e) => {
     e.preventDefault();
-    await axios.put("http://localhost:5001/api/profiles/experience/",experience,{
+    await axios.put("https://tech-loom-zez7.onrender.com/api/profiles/experience/",experience,{
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,

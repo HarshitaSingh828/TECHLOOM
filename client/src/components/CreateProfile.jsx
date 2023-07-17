@@ -23,7 +23,7 @@ let CreateProfile = () => {
 
   useEffect(()=>{
     if(!localStorage.getItem("devroom")){
-      navigate("http://localhost:5001/users/login")
+      navigate("https://tech-loom-zez7.onrender.com/users/login")
     }
   },[])
 
@@ -59,7 +59,7 @@ let CreateProfile = () => {
 
   let submitCreateProfile = async(e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5001/api/profiles/", profile, {
+    await axios.post("https://tech-loom-zez7.onrender.com/api/profiles/", profile, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -67,7 +67,7 @@ let CreateProfile = () => {
     });
 
     Swal.fire("Profile created successfully", "", "success");
-    navigate("http://localhost:5001/profiles/dashboard");
+    navigate("https://tech-loom-zez7.onrender.com/profiles/dashboard");
   };
 
   return (

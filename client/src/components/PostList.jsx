@@ -17,7 +17,7 @@ let PostList = () => {
   let [loggedIn,setLoggedIn]=useState(false);
  useEffect(() => {
    if (!localStorage.getItem("devroom")) {
-     navigate("http://localhost:5001/users/login");
+     navigate("https://tech-loom-zez7.onrender.com/users/login");
    }
    setLoggedIn(true);
  }, []);
@@ -50,7 +50,7 @@ let PostList = () => {
 
 
    const getUser = async () => {
-     let { data } = await axios.get("http://localhost:5001/api/users/me", {
+     let { data } = await axios.get("https://tech-loom-zez7.onrender.com/api/users/me", {
        headers: {
          "Content-Type": "application/json",
          Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -61,7 +61,7 @@ let PostList = () => {
    };
 
     const getPosts = async () => {
-      let { data } = await axios.get("http://localhost:5001/api/posts/", {
+      let { data } = await axios.get("https://tech-loom-zez7.onrender.com/api/posts/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -92,7 +92,7 @@ let PostList = () => {
     e.preventDefault();
     if (localPost.text.trim() !== "")
     {
-      const {data} =  await axios.post("http://localhost:5001/api/posts/",localPost,{
+      const {data} =  await axios.post("https://tech-loom-zez7.onrender.com/api/posts/",localPost,{
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -110,7 +110,7 @@ let PostList = () => {
   };
 
   let clickDeletePost = async (postId) => {
-    const { data } = await axios.delete(`http://localhost:5001/api/posts/${postId}`, {
+    const { data } = await axios.delete(`https://tech-loom-zez7.onrender.com/api/posts/${postId}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
@@ -125,7 +125,7 @@ let PostList = () => {
   };
 
   let clickLikePost = async(postId) => {
-    const {data} = await axios.put(`http://localhost:5001/api/posts/like/${postId}`,{},{
+    const {data} = await axios.put(`https://tech-loom-zez7.onrender.com/api/posts/like/${postId}`,{},{
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,

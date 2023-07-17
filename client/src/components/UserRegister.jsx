@@ -55,7 +55,7 @@ let UserRegister = () => {
      let password = user.password.trim();
 
    const { status } = await axios.post(
-     "http://localhost:5001/api/users/register",
+     "https://tech-loom-zez7.onrender.com/api/users/register",
      { name, email, password },
      {
        headers: {

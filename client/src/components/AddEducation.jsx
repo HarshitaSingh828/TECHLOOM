@@ -18,7 +18,7 @@ let AddEducation = () => {
 
       useEffect(() => {
         if (!localStorage.getItem("devroom")) {
-          navigate("http://localhost:5001/users/login");
+          navigate("/users/login");
         }
       }, []);
 
@@ -39,7 +39,7 @@ let AddEducation = () => {
 
   let submitAddEducation = async(e) => {
     e.preventDefault();
-    await axios.put("http://localhost:5001/api/profiles/education/",education,{
+    await axios.put("https://tech-loom-zez7.onrender.com/api/profiles/education/",education,{
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("devroom")}`,
